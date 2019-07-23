@@ -10,11 +10,12 @@ pub struct Greeter {
 
 #[near_bindgen]
 impl Greeter {
-   pub fn set_greeter(&mut self, greeting: String){
+   pub fn set_greeting(&mut self, greeting: String){
         self.greeting = greeting;
    }
    pub fn greet(&self) -> String {
-        let what_to_greet: &str = "world";     
-        return format!("{}, {}!", self.greeting, what_to_greet);
-   }    
+        let mut full_greeting: String = self.greeting.to_owned();
+        full_greeting.push_str(", world!");
+        return full_greeting;
+   }
 }
