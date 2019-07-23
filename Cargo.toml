@@ -1,5 +1,5 @@
 [package]
-name = "hello-world"
+name = "greeter"
 version = "0.1.0"
 authors = ["jasper de gooijer"]
 edition = "2018"
